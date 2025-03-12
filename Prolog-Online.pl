@@ -25,5 +25,9 @@ planta(alga).
 presa(X) :- come(_, X), animal(X).
 herbivoro(X) :- come(X, Y), planta(Y).
 
+nacadeiaalimentar(X, Y) :- come(X, Y).
+nacadeiaalimentar(X, Y) :- come(X, Z), nacadeiaalimentar(Z, Y).
+
 ?-presa(_).
 ?-herbivoro(_).
+?-nacadeiaalimentar(_, _).
